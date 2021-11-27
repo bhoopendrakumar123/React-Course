@@ -1,0 +1,300 @@
+import React, { Component } from 'react'
+import NewsItem from './NewsItem'
+
+export class News extends Component {
+    articles = [
+        {
+        "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+        },
+        "author": "Bryan Pietsch, Adela Suliman",
+        "title": "Covid-19 live updates: Third coronavirus vaccine shot's side effects echo those from second dose, CDC says - The Washington Post",
+        "description": "Uptake of boosters is expected to be strong, with 1 million Americans scheduling appointments.",
+        "url": "https://www.washingtonpost.com/nation/2021/09/29/covid-delta-variant-live-updates/",
+        "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3KFNAQBAQAI6ZKGZBAT2FJFZCU.jpg&w=1440",
+        "publishedAt": "2021-09-29T09:59:07Z",
+        "content": "An elementary school teacher in New Jersey has been arrested on charges of forging a doctors letter to avoid a school mask requirement, law enforcement said. Gayle Hadley, a physical education teach… [+1549 chars]"
+        },
+        {
+        "source": {
+        "id": "cnn",
+        "name": "CNN"
+        },
+        "author": "Al Goodman, CNN and Reuters",
+        "title": "La Palma residents told to lock down as volcano lava pours into sea - CNN",
+        "description": "Authorities in Spain's Canary Islands on Wednesday told residents on the western coast of La Palma to seal doors and windows with tape and wet towels to ward off toxic gases spewed by lava from the Cumbre Vieja volcano as it reached the sea.",
+        "url": "https://www.cnn.com/2021/09/29/europe/canary-islands-la-palma-volcano-lava-intl/index.html",
+        "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/210929053320-01-spain-la-palma-volcano-092921-super-tease.jpg",
+        "publishedAt": "2021-09-29T09:46:00Z",
+        "content": null
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "New York Times"
+        },
+        "author": "Jonathan Weisman",
+        "title": "Republicans at Odds Over Infrastructure Bill as Vote Approaches - The New York Times",
+        "description": "With a bipartisan infrastructure bill set for a Thursday vote in the House, a campaign by business groups and some Senate Republicans to secure G.O.P. support may be the measure’s last hope.",
+        "url": "https://www.nytimes.com/2021/09/29/us/politics/republicans-infrastructure-bill.html",
+        "urlToImage": "https://static01.nyt.com/images/2021/09/29/us/politics/29dc-gopinfrastructure-1/29dc-gopinfrastructure-1-facebookJumbo.jpg",
+        "publishedAt": "2021-09-29T09:00:21Z",
+        "content": "Were working to keep that number as low as we possibly can, he said. A few House Republicans who are members of the bipartisan Problem Solvers Caucus have announced their support for the measure, in… [+1840 chars]"
+        },
+        {
+        "source": {
+        "id": "politico",
+        "name": "Politico"
+        },
+        "author": "Laura Barrón-López, Natasha Korecki",
+        "title": "Biden bets it all on unlocking the Manchinema puzzle - POLITICO",
+        "description": "The White House isn’t whipping House progressives as hard as congressional moderates. Here’s why.",
+        "url": "https://www.politico.com/news/2021/09/29/biden-manchin-sinema-whipping-moderates-514608",
+        "urlToImage": "https://static.politico.com/67/32/681704494a6a8f5c3d122203ee5d/ap21271594517633-1.jpg",
+        "publishedAt": "2021-09-29T08:30:21Z",
+        "content": "Its a gamble. House progressives have pledged to tank the infrastructure bill unless the presidents proposal to reshape the social safety net passes first. Rather than whipping them to fall in line, … [+4527 chars]"
+        },
+        {
+        "source": {
+        "id": "cnn",
+        "name": "CNN"
+        },
+        "author": "Junko Ogura, Selina Wang and Helen Regan, CNN",
+        "title": "Fumio Kishida expected to become Japan's next Prime Minister after winning leadership election - CNN",
+        "description": "Japan's ruling Liberal Democratic Party (LDP) elected former top diplomat Fumio Kishida as its new leader on Wednesday after a tightly contested race that ended in a runoff vote -- clearing a path for him to become the country's next Prime Minister.",
+        "url": "https://www.cnn.com/2021/09/29/asia/japan-leadership-election-kishida-intl-hnk/index.html",
+        "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/210929022042-01-japan-ldp-election-0929-fumio-kishida-super-tease.jpg",
+       "publishedAt": "2021-09-29T08:12:00Z",
+        "content": "Tokyo (CNN)Japan's ruling Liberal Democratic Party (LDP) elected former top diplomat Fumio Kishida as its new leader on Wednesday after a tightly contested race that ended in a runoff vote -- clearin… [+4324 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "TMZ"
+        },
+        "author": "TMZ Staff",
+        "title": "Britney Spears Court Hearing, Terminating Conservatorship on the Table - TMZ",
+        "description": "It is possible -- POSSIBLE -- the 13-year-long Britney Spears conservatorship could end today as everyone -- with one big exception -- appears in court via zoom for what promises to be an explosive showdown.",
+        "url": "https://www.tmz.com/2021/09/29/britney-spears-court-hearing-conservatorship-termination-jamie-spears/",
+        "urlToImage": "https://imagez.tmz.com/image/a6/16by9/2021/09/28/a62170ccefcf41dfbe776e1a71ea2202_xl.jpg",
+        "publishedAt": "2021-09-29T08:00:00Z",
+        "content": "It is possible -- POSSIBLE -- the 13-year-long Britney Spears conservatorship could end today as everyone -- with one big exception -- appears in court via zoom for what promises to be an explosive s… [+2111 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Fox Business"
+        },
+        "author": "Associated Press",
+        "title": "US stocks showing significant gains overnight despite high Treasury yields - Fox Business",
+        "description": "U.S. equity futures were trading higher early Wednesday even as Treasury yields have reached their highest levels in months.",
+        "url": "https://www.foxbusiness.com/markets/us-stocks-showing-significant-gains-overnight-despite-high-treasury-yields",
+        "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2017/11/0/0/nyse-trader-12.jpg?ve=1&tl=1",
+        "publishedAt": "2021-09-29T07:49:04Z",
+        "content": "U.S. equity futures were trading higher early Wednesday even as Treasury yields have reached their highest levels in months. Stocks in this Article A swift rise in Treasury yields is forcing inve… [+4184 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "CBS Sports"
+        },
+        "author": "",
+        "title": "Revisiting Tom Brady's free agency that ultimately led to him leaving Patriots, signing with Buccaneers - CBS Sports",
+        "description": "Here's a look back at Brady's 2020 free agency before he returns to Foxborough",
+        "url": "https://www.cbssports.com/nfl/news/revisiting-tom-bradys-free-agency-that-ultimately-led-to-him-leaving-patriots-signing-with-buccaneers/",
+        "urlToImage": "https://sportshub.cbsistatic.com/i/r/2020/02/04/17a51e73-4b92-4383-a051-d8cae0842f89/thumbnail/1200x675/4013ec01b5bab8f77d9a60220dbf226e/tom-brady-patriots.jpg",
+        "publishedAt": "2021-09-29T06:05:00Z",
+        "content": "The time has finally come. For the first time since leaving the organization in the spring of 2020, Tom Brady will enter Gillette Stadium to face his former team in the New England Patriots and forme… [+10790 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "hoopsrumors.com"
+        },
+        "author": null,
+        "title": "Lakers Notes: Russ-LeBron, Nunn, Vaccination, Reaves - hoopsrumors.com",
+        "description": "News and notes out of Lakerland.",
+        "url": "https://www.hoopsrumors.com/2021/09/lakers-notes-russ-lebron-nunn-ad-reaves.html",
+        "urlToImage": "https://cdn.hoopsrumors.com/files/2021/09/USATSI_16847817-900x661.jpg",
+        "publishedAt": "2021-09-29T04:05:00Z",
+        "content": "Pricey new Lakers point guard Russell Westbrook has raved about his fit alongside LeBron James, one of the most ball-dominant teammates with whom the very ball-dominant Westbrook has ever played. “My… [+2630 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "PhoneArena"
+        },
+        "author": "Alan Friedman",
+        "title": "Samsung Galaxy Z Fold 3 5G explodes; it is not another Galaxy Note 7 - PhoneArena",
+        "description": "A Samsung Galaxy Z Fold 3 that had fallen off of the owner's bike and was in the process of getting boxed up for a return to the manufacturer when the phone exploded.",
+        "url": "https://www.phonearena.com/news/damaged-galaxy-z-fold-3-5g-explodes_id135374",
+        "urlToImage": "https://m-cdn.phonearena.com/images/article/135374-wide-two_1200/Samsung-Galaxy-Z-Fold-3-5G-explodes-it-is-not-another-Galaxy-Note-7.jpg",
+        "publishedAt": "2021-09-29T03:08:16Z",
+        "content": "This is our new notification center. Inside, you will find updates on the most important things happening right now. Got it"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "CNBC"
+        },
+        "author": "Weizhen Tan",
+        "title": "Evergrande to sell $1.5 billion stake in Chinese bank, as it faces another bond interest payment - CNBC",
+        "description": "Indebted Chinese developer Evergrande is set to sell off a 9.99 billion yuan ($1.5 billion) stake it owns in a Chinese bank to a Chinese state-owned asset management firm.",
+        "url": "https://www.cnbc.com/2021/09/29/evergrande-debt-crisis-to-sell-stake-in-bank-faces-bond-payment.html",
+        "urlToImage": "https://image.cnbcfm.com/api/v1/image/106944807-1632224216232-gettyimages-1235397658-CHINA_EVERGRANDE_PROPERTY.jpeg?v=1632882939",
+        "publishedAt": "2021-09-29T02:50:00Z",
+        "content": "Residences at China Evergrande Group's Life in Venice real estate and tourism development in Qidong, Jiangsu province, China, on Tuesday, Sept. 21, 2021. Ahead of another interest payment deadline, … [+2143 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "The A.V. Club"
+        },
+        "author": "Sam Barsanti",
+        "title": "Ben Whishaw would like to see radicalchange for the future of James Bond - The A.V. Club",
+        "description": "Ben Whishaw thinks the series needs to change to stay relevant",
+        "url": "https://www.avclub.com/ben-whishaw-would-like-to-see-radical-change-for-the-1847764949",
+        "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/e65962f83b37ad7b7f047c3fc73162f0.jpg",
+        "publishedAt": "2021-09-29T02:45:00Z",
+        "content": "Daniel Craig has some thoughts about what the future of the James Bond series should look like, specifically that he thinks the world doesnt need a woman or a person of color to play Bond because wom… [+1521 chars]"
+        },
+        {
+        "source": {
+       "id": null,
+       "name": "New York Daily News"
+        },
+        "author": "Joseph Wilkinson",
+        "title": "Unvaccinated student, 20, dies from COVID after mom’s warning - New York Daily News",
+        "description": "“He rationalized that a healthy 20 year old that gets it ‘won’t get that sick,” Tamra Demello said. “I cajoled, encouraged, threatened, and nagged for him to get vaccinated.”",
+        "url": "https://www.nydailynews.com/coronavirus/ny-covid-unvaccinated-college-student-dead-north-carolina-20210929-jtlgihulxfdz3fb3fbiodezedy-story.html",
+        "urlToImage": "https://www.nydailynews.com/resizer/cUThTn6CPtMmnUrxpF7oYdqbymU=/1200x0/right/middle/cloudfront-us-east-1.images.arcpublishing.com/tronc/WDS57OWYTVEQFL3SSKZZLT6RWY.jpg",
+        "publishedAt": "2021-09-29T02:37:00Z",
+        "content": "A North Carolina college student who refused to get a COVID-19 vaccine despite his mothers repeated pleas died Monday. Tyler Gilreath, 20, had just started his sophomore year at North Carolina-Wilmi… [+1371 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "New York Post"
+        },
+        "author": "Elizabeth Rosner, Kenneth Garger",
+        "title": "Bill Cosby feels R. Kelly 'got railroaded' at sex-trafficking trial - New York Post ",
+        "description": "Cosby believes the pervy singer “was screwed” and that “he wasn’t going to catch a break,” during the month-long trial, according to his spokesman, Andrew Wyatt.",
+        "url": "https://nypost.com/2021/09/28/bill-cosby-feels-r-kelly-got-railroaded-at-sex-trafficking-trial/",
+        "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2021/09/newspress-collage-19626286-1632879015265.png?w=1024",
+        "publishedAt": "2021-09-29T01:56:00Z",
+        "content": "Bill Cosby feels R. Kelly got railroaded in his sex-trafficking trial that ended Monday with guilty convictions on all nine counts against him, according to the newly freed comedians rep. Cosby beli… [+1986 chars]"
+        },
+        {
+        "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+        },
+        "author": "The Associated Press",
+        "title": "Texas inmate executed for killing 2 brothers in 1991 - NBC News",
+        "description": "Rick Rhoades was executed in Texas Tuesday for fatally stabbing two brothers in their Houston-area home in 1991 during a robbery.",
+        "url": "https://www.nbcnews.com/news/us-news/texas-inmate-executed-killing-2-brothers-1991-n1280286",
+        "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2021_39/3508954/210928-huntsville-texas-state-penitentiary-death-chamber-2014-ac-827p.jpg",
+        "publishedAt": "2021-09-29T01:03:00Z",
+        "content": "HUNTSVILLE, Texas A Texas inmate was executed Tuesday evening for fatally stabbing two Houston-area brothers during a robbery in their home more than 30 years ago. Rick Rhoades, 57, was executed by … [+3984 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "The Boston Globe"
+        },
+        "author": null,
+        "title": "COVID-19 cases expected to rise in Mass., but high vaccination rate likely to keep hospitals manageable - The Boston Globe",
+        "description": "What happens next in Massachusetts and surrounding states, where vaccination rates are high, will hold lessons for the rest of the country, said Dr. David Rubin, director of the PolicyLab at Children’s Hospital of Philadelphia.",
+        "url": "https://www.bostonglobe.com/2021/09/28/metro/covid-19-cases-expected-rise-mass-high-vaccination-rate-likely-keep-hospitals-manageable/",
+        "urlToImage": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/mesClDIsbxPW6hpDgiOl9nmZSkc=/506x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/IWUASEMIAHQSQESDUAPKRGW5CM.JPG",
+        "publishedAt": "2021-09-29T00:47:15Z",
+        "content": "As a result, hospital officials around the state say they are not expecting a huge surge in COVID-19 cases. Their various models predict either a slight decline, a slight increase, or an increase tha… [+7573 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Pro Football Network"
+        },
+        "author": null,
+        "title": "Fantasy Waiver Wire Week 4: Chuba Hubbard a top waiver claim in Week 4 - Pro Football Network",
+        "description": "After an exciting three weeks of the 2021 season, who are the priority Week 4 waiver wire pickups to target for your fantasy football team?",
+        "url": "https://www.profootballnetwork.com/fantasy-waiver-wire-2021-nflwk-4/",
+        "urlToImage": "https://www.profootballnetwork.com/wp-content/uploads/2021/09/Week-4-Waiver-Wire-Best-pickups-and-targets-for-fantasy-football-1.jpg",
+        "publishedAt": "2021-09-29T00:15:31Z",
+        "content": "With three weeks in the books, its time to improve our rosters for Week 4 by using the waiver wire. Lets take a look at the top waiver wire pickups to target for your fantasy football team in Week 4.… [+8442 chars]"
+        },
+        {
+        "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+        },
+        "author": "Erin Snodgrass",
+        "title": "Biden opposes changing filibuster to raise debt ceiling - Business Insider",
+        "description": "The president's resistance to altering the filibuster effectively torpedoes Democrats' last-ditch option for raising the debt limit.",
+        "url": "https://www.businessinsider.com/biden-opposes-changing-filibuster-to-raise-debt-ceiling-2021-9",
+        "urlToImage": "https://i.insider.com/613253b861f7d80018f2319a?width=1200&format=jpeg",
+        "publishedAt": "2021-09-29T00:08:31Z",
+        "content": "Not even the threat of an impending US recession can change President Joe Biden's mind when it comes to the filibuster. White House Press Secretary Jen Psaki confirmed Tuesday that the president has… [+2550 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Android Central"
+        },
+        "author": "Derrek Lee",
+        "title": "Amazon Event 2021: Everything announced including Astro, Echo Show 15, and Ring's drone camera - Android Central",
+        "description": "Amazon's 2021 fall hardware event introduced more than a few new hardware devices, including a new Echo Show 15 and a security robot that can monitor your home.",
+        "url": "https://www.androidcentral.com/heres-everything-amazon-announced-september-2021-event",
+        "urlToImage": "https://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2021/09/amazon-fall-hardware-event-2021.jpg",
+        "publishedAt": "2021-09-28T23:44:03Z",
+        "content": "Source: Amazon Amazon announced quite a bit at its September 2021 hardware event. We got a brand-new Echo display, new AI features, and even a robot that looks like it'll be a lot of fun to keep aro… [+7619 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "YouTube"
+        },
+        "author": null,
+        "title": "Jim Cramer says these six factors are driving the stock market sell-off - CNBC Television",
+        "description": "CNBC's Jim Cramer on Tuesday laid out the six factors he believes are contributing to the market's sell-off. However, the Mad Money stressed he believes ev...",
+        "url": "https://www.youtube.com/watch?v=GWzms5fwLNI",
+        "urlToImage": "https://i.ytimg.com/vi/GWzms5fwLNI/maxresdefault.jpg",
+        "publishedAt": "2021-09-28T23:37:35Z",
+        "content": null
+        }
+        ]
+          
+    
+    constructor(){
+        super();
+        console.log("hello something from news component");
+        this.state = {
+            articles: this.articles,
+            loading: false
+        }
+    }
+    render() {
+        return (
+            <div className = "container my-3">
+                <h2>NewsMonkey - Top Headlines</h2>
+                <div className="row">
+                <div className = "col-md-4">
+                     <NewsItem title = "mytitle" description = "mydesc" imageurl="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/3KFNAQBAQAI6ZKGZBAT2FJFZCU.jpg&w=1440" className="card-img-top" alt="..."/>
+                
+                </div>
+                <div className = "col-md-4">
+                     <NewsItem title = "mytitle" description = "mydesc"/>
+                
+                </div>
+                <div className = "col-md-4">
+                     <NewsItem title = "mytitle" description = "mydesc"/>
+                
+                </div>
+                </div>
+                </div>
+        )
+    }
+}
+
+export default News
